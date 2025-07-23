@@ -1,1 +1,7 @@
 @import "tailwindcss";
+*{
+      font-family: "DM Sans", sans-serif;
+}
+.font-cal{
+     font-family: "Cal Sans", sans-serif;
+}
