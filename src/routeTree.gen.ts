@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FoodDeliveryIndexRouteImport } from './routes/food-delivery/index'
+import { Route as FoodDeliveryRestaurantRouteImport } from './routes/food-delivery/restaurant'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const FoodDeliveryIndexRoute = FoodDeliveryIndexRouteImport.update({
   path: '/food-delivery/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FoodDeliveryRestaurantRoute = FoodDeliveryRestaurantRouteImport.update({
+  id: '/food-delivery/restaurant',
+  path: '/food-delivery/restaurant',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/food-delivery/': typeof FoodDeliveryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/food-delivery'
+  fullPaths: '/' | '/food-delivery/restaurant' | '/food-delivery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/food-delivery'
-  id: '__root__' | '/' | '/food-delivery/'
+  to: '/' | '/food-delivery/restaurant' | '/food-delivery'
+  id: '__root__' | '/' | '/food-delivery/restaurant' | '/food-delivery/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FoodDeliveryRestaurantRoute: typeof FoodDeliveryRestaurantRoute
   FoodDeliveryIndexRoute: typeof FoodDeliveryIndexRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoodDeliveryIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/food-delivery/restaurant': {
+      id: '/food-delivery/restaurant'
+      path: '/food-delivery/restaurant'
+      fullPath: '/food-delivery/restaurant'
+      preLoaderRoute: typeof FoodDeliveryRestaurantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FoodDeliveryRestaurantRoute: FoodDeliveryRestaurantRoute,
   FoodDeliveryIndexRoute: FoodDeliveryIndexRoute,
 }
 export const routeTree = rootRouteImport
