@@ -3,6 +3,7 @@ import React from "react";
 import food from "../assets/food.png";
 import grocery from "../assets/grocery.png";
 import dining from "../assets/dining.png";
+import { useNavigate } from "@tanstack/react-router";
 
 const options = [
   {
@@ -26,7 +27,7 @@ const options = [
 ];
 
 const Hero = () => {
-
+ const navigate=useNavigate()
 
   return (
     <div className="w-full px-4 md:px-20  flex flex-col py-20 max-lg:py-10  min-h-[100vh]">
@@ -64,7 +65,7 @@ const Hero = () => {
             </div>
             <button
               className="z-10 cursor-pointer mt-8 self-end bg-white text-black rounded-lg px-4 py-2 font-semibold text-sm shadow transition-all hover:bg-neutral-100 flex items-center gap-1 absolute bottom-6 left-6"
-              
+              onClick={()=>navigate({to:`${option.route}`})}
             >
               Explore Now &rarr;
             </button>
