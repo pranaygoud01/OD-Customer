@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FoodDeliveryIndexRouteImport } from './routes/food-delivery/index'
 import { Route as FoodDeliveryRestaurantRouteImport } from './routes/food-delivery/restaurant'
 
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,36 +37,52 @@ const FoodDeliveryRestaurantRoute = FoodDeliveryRestaurantRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
   '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
   '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
   '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/food-delivery/': typeof FoodDeliveryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/food-delivery/restaurant' | '/food-delivery'
+  fullPaths: '/' | '/login' | '/food-delivery/restaurant' | '/food-delivery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/food-delivery/restaurant' | '/food-delivery'
-  id: '__root__' | '/' | '/food-delivery/restaurant' | '/food-delivery/'
+  to: '/' | '/login' | '/food-delivery/restaurant' | '/food-delivery'
+  id:
+    | '__root__'
+    | '/'
+    | '/login'
+    | '/food-delivery/restaurant'
+    | '/food-delivery/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LoginRoute: typeof LoginRoute
   FoodDeliveryRestaurantRoute: typeof FoodDeliveryRestaurantRoute
   FoodDeliveryIndexRoute: typeof FoodDeliveryIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +109,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LoginRoute: LoginRoute,
   FoodDeliveryRestaurantRoute: FoodDeliveryRestaurantRoute,
   FoodDeliveryIndexRoute: FoodDeliveryIndexRoute,
 }

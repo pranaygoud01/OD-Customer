@@ -35,15 +35,15 @@ const Category = () => {
   return (
     <div className="w-full bg-white px-5 lg:px-20 py-5">
       <h2 className="text-2xl font-cal max-lg:text-xl mb-4">What's on your mind?</h2>
-      <div className="grid grid-cols-6 mt-5 max-lg:grid-cols-3 gap-5 items-center">
+      <div className="grid grid-cols-8 mt-5 max-lg:grid-cols-3 gap-5 items-center">
         {categories.map((cat) => (
           <div key={cat.name} className="text-center min-w-[100px] flex-shrink-0">
             <img
               src={cat.image}
               alt={cat.name}
-              className="w-40 max-lg:w-20 max-lg:h-20 h-40 object-cover rounded-full shadow-md mx-auto"
+              className="w-30 max-lg:w-20 max-lg:h-20 h-30 object-cover rounded-full shadow-md mx-auto"
             />
-            <p className="mt-2 text-base text-gray-600">{cat.name}</p>
+            <p className="mt-2 text-xs font-cal text-gray-600">{cat.name}</p>
           </div>
         ))}
       </div>

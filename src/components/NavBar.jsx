@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import React, { useState } from "react";
 
 const NavBar = () => {
@@ -13,9 +14,9 @@ const NavBar = () => {
 
         {/* Desktop buttons */}
         <div className="hidden md:flex gap-3 items-center">
-          <button className="font-semibold text-xs px-4 py-2 rounded-md bg-[#1ECD75] text-white hover:bg-[#17b966] transition">
+          <Link to="/login" className="font-semibold text-xs px-4 py-2 rounded-md bg-[#1ECD75] text-white hover:bg-[#17b966] transition">
             Login
-          </button>
+          </Link>
           <button className="font-semibold text-xs px-4 py-2 rounded-md bg-[#222] text-white hover:bg-[#111] transition">
             Contact
           </button>

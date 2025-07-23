@@ -30,7 +30,7 @@ const Hero = () => {
  const navigate=useNavigate()
 
   return (
-    <div className="w-full px-4 md:px-20  flex flex-col py-20 max-lg:py-10  min-h-[100vh]">
+    <div className="w-full px-4 md:px-20  flex flex-col py-10 max-lg:py-10  min-h-[100vh]">
       <div className="flex flex-col gap-2 justify-center  mb-8 max-w-4xl">
         <h1 className="font-cal text-neutral-900 text-2xl md:text-4xl ">
           Order Anything, Anytime
@@ -40,7 +40,7 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:pt-10 gap-6 md:gap-8">
         {options.map((option, idx) => (
           <div
             key={option.title}

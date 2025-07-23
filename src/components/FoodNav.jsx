@@ -1,6 +1,7 @@
 import React from 'react'
 import { FiShoppingBag } from "react-icons/fi";
 import { CiSearch } from "react-icons/ci";
+import { Link } from '@tanstack/react-router';
 
 const FoodNav = () => {
   return (
@@ -19,9 +20,9 @@ const FoodNav = () => {
             <button className="font-cal text-xs text-white bg-green-500 rounded-md px-4 py-2 hover:bg-green-600 transition-colors">
               Register
             </button>
-            <button className="font-cal text-xs text-white bg-black rounded-md px-4 py-2 hover:bg-gray-900 transition-colors">
+            <Link to="/login" className="font-cal text-xs text-white bg-black rounded-md px-4 py-2 hover:bg-gray-900 transition-colors">
               Login
-            </button>
+            </Link>
           </div>
         </div>
 
