@@ -13,11 +13,11 @@ const HNavBar = () => {
       <div className=" flex gap-3 items-center">
         <Link
           to="/login"
-          className="font-semibold text-xs px-4 py-2 rounded-md bg-[#1ECD75] text-white hover:bg-[#17b966] transition"
+          className="font-semibold text-xs px-4 py-2  bg-[#1ECD75] text-white hover:bg-[#17b966] transition"
         >
           Login
         </Link>
-        <button className="font-semibold text-xs px-4 py-2 rounded-md bg-[#222] text-white hover:bg-[#111] transition">
+        <button className="font-semibold text-xs px-4 py-2  bg-[#222] text-white hover:bg-[#111] transition">
           Contact
         </button>
       </div>

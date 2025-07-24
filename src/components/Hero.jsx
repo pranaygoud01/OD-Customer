@@ -44,7 +44,7 @@ const Hero = () => {
         {options.map((option, idx) => (
           <div
             key={option.title}
-            className={`relative cursor-pointer overflow-hidden rounded-2xl p-8 max-lg:p-5 flex flex-col justify-between text-white shadow-lg transition-transform hover:scale-105 ${
+            className={`relative cursor-pointer overflow-hidden p-8 max-lg:p-5 flex flex-col justify-between text-white shadow-lg transition-transform hover:scale-105 ${
               idx === 0
                 ? "bg-orange-600 max-lg:min-h-[210px] min-h-[300px]"
                 : idx === 1

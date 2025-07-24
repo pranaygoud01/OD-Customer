@@ -18,14 +18,14 @@ const FoodNav = () => {
           <div className="flex items-center gap-3 justify-end">
             <FiShoppingBag className="text-xl cursor-pointer text-neutral-700" />
           
-            <Link to="/login" className="font-cal text-xs text-white bg-black rounded-md px-4 py-2 hover:bg-gray-900 transition-colors">
+            <Link to="/login" className="font-cal text-xs text-white bg-black  px-4 py-2 hover:bg-gray-900 transition-colors">
               Login
             </Link>
           </div>
         </div>
 
         {/* 2nd line: Search bar */}
-        <div className="flex items-center max-lg:mt-2 gap-2 w-full bg-neutral-100 border border-neutral-200 rounded-xl px-3 py-2 max-md:w-full">
+        <div className="flex items-center max-lg:mt-2 gap-2 w-full bg-neutral-100 border border-neutral-200  px-3 py-2 max-md:w-full">
           <CiSearch className="text-xl text-neutral-500" />
           <input
             type="text"

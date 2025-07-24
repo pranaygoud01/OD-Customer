@@ -14,10 +14,10 @@ const NavBar = () => {
 
         {/* Desktop buttons */}
         <div className="hidden md:flex gap-3 items-center">
-          <Link to="/login" className="font-semibold text-xs px-4 py-2 rounded-md bg-[#1ECD75] text-white hover:bg-[#17b966] transition">
+          <Link to="/login" className="font-semibold text-xs px-4 py-2  bg-[#1ECD75] text-white hover:bg-[#17b966] transition">
             Login
           </Link>
-          <button className="font-semibold text-xs px-4 py-2 rounded-md bg-[#222] text-white hover:bg-[#111] transition">
+          <button className="font-semibold text-xs px-4 py-2  bg-[#222] text-white hover:bg-[#111] transition">
             Contact
           </button>
         </div>
@@ -25,7 +25,7 @@ const NavBar = () => {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#1ECD75]"
+          className="md:hidden flex items-center justify-center p-2  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#1ECD75]"
           aria-label="Toggle menu"
         >
           <svg
@@ -57,10 +57,10 @@ const NavBar = () => {
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-b border-neutral-200 px-4 py-4">
-          <button className="block w-fit  text-left font-semibold text-sm mb-3 px-4 py-2 rounded-md bg-[#1ECD75] text-white hover:bg-[#17b966] transition">
+          <button className="block w-fit  text-left font-semibold text-sm mb-3 px-4 py-2  bg-[#1ECD75] text-white hover:bg-[#17b966] transition">
             Login
           </button>
-          <button className="block w-fit text-left font-semibold text-sm px-4 py-2 rounded-md bg-[#222] text-white hover:bg-[#111] transition">
+          <button className="block w-fit text-left font-semibold text-sm px-4 py-2  bg-[#222] text-white hover:bg-[#111] transition">
             Contact
           </button>
         </div>

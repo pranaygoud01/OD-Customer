@@ -42,7 +42,7 @@ const HeaderCarousel = () => {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-[200px] md:h-[350px] object-cover rounded-xl"
+              className="w-full h-[200px] md:h-[350px] object-cover "
             />
             <div className="
                 absolute 

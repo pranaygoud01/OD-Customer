@@ -55,7 +55,7 @@ const Restaurant = () => (
 
     <div className="grid grid-cols-1 mt-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {restaurants.map(({ name, rating, time, cuisines, location, imageUrl }) => (
-        <Link to="/food-delivery/restaurant" key={name} className="rounded-lg border border-neutral-300 hover:shadow overflow-hidden bg-white">
+        <Link to="/food-delivery/restaurant" key={name} className="border border-neutral-300 hover:shadow overflow-hidden bg-white">
           <img src={imageUrl} alt={name} className="w-full h-36 object-cover" />
           <div className="p-4">
             <h3 className="font-cal text-lg mb-1">{name}</h3>

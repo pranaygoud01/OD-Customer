@@ -17,7 +17,7 @@ const FoodCard = ({ id, name, image, price, desc }) => {
         <div className="absolute w-full h-[150px] flex justify-center items-end">
           <button
             onClick={handleCart}
-            className="text-white text-xs font-cal cursor-pointer px-5 py-2 rounded-md bg-green-500"
+            className="text-white text-xs font-cal cursor-pointer px-5 py-2  bg-green-500"
           >
             Add to cart
           </button>

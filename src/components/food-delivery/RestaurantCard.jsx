@@ -2,7 +2,7 @@ export default function RestaurantCard({
   name, rating, time, price, tags, area, image, offer
 }) {
   return (
-    <div className="relative border border-neutral-200 rounded-xl  bg-white overflow-hidden hover:shadow-2xl transition-shadow">
+    <div className="relative border border-neutral-200   bg-white overflow-hidden hover:shadow-2xl transition-shadow">
       <img src={`/images/${image}`} alt={name} className="w-full h-40 object-cover" />
       {offer && (
         <span className="absolute top-3 left-3 bg-yellow-400 text-black px-2 py-1 text-xs font-bold rounded">

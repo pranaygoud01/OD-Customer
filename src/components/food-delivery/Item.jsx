@@ -50,10 +50,10 @@ const Items = () => {
 
   return (
     <div className="w-full h-fit flex justify-center">
-      <div className="max-w-[1300px] h-full flex flex-col items-center w-full">
+      <div className="max-w-[1350px] h-full flex flex-col items-center w-full">
         <div className="sticky z-10 bg-white top-18 max-lg:top-15 max-lg:w-full max-lg:px-4 flex flex-col items-center w-10/12">
           <h1 className="text-sm font-cal text-neutral-700">Menu</h1>
-          <div className="flex mt-2 items-center max-lg:mt-2 gap-2 w-full bg-neutral-100 border border-neutral-200 rounded-xl px-3 py-2 max-md:w-full">
+          <div className="flex mt-2 items-center max-lg:mt-2 gap-2 w-full bg-neutral-100 border border-neutral-200 px-3 py-2 max-md:w-full">
                     <CiSearch className="text-xl text-neutral-500" />
                     <input
                       type="text"
