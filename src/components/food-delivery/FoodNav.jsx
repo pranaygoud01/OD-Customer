@@ -17,9 +17,7 @@ const FoodNav = () => {
           {/* Actions: Cart + Buttons */}
           <div className="flex items-center gap-3 justify-end">
             <FiShoppingBag className="text-xl cursor-pointer text-neutral-700" />
-            <button className="font-cal text-xs text-white bg-green-500 rounded-md px-4 py-2 hover:bg-green-600 transition-colors">
-              Register
-            </button>
+          
             <Link to="/login" className="font-cal text-xs text-white bg-black rounded-md px-4 py-2 hover:bg-gray-900 transition-colors">
               Login
             </Link>

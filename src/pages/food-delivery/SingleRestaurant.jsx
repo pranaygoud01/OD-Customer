@@ -2,10 +2,11 @@ import React from "react";
 import { GoLocation } from "react-icons/go";
 import { FaStar } from "react-icons/fa6";
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import Items from "../components/food-delivery/Item"
-import FoodNav from "../components/FoodNav";
-import Footer from "../components/Footer";
+import Items from "../../components/food-delivery/Item"
+import FoodNav from "../../components/food-delivery/FoodNav";
+import Footer from "../../components/Footer";
 import { FiShoppingBag } from "react-icons/fi";
+import { Link } from "@tanstack/react-router";
 
 const dummyRestaurant = {
   id: "1",
@@ -33,12 +34,10 @@ const SingleRestaurant = () => {
                   {/* Actions: Cart + Buttons */}
                   <div className="flex items-center gap-3 justify-end">
                     <FiShoppingBag className="text-xl cursor-pointer text-neutral-700" />
-                    <button className="font-cal text-xs text-white bg-green-500 rounded-md px-4 py-2 hover:bg-green-600 transition-colors">
-                      Register
-                    </button>
-                    <button className="font-cal text-xs text-white bg-black rounded-md px-4 py-2 hover:bg-gray-900 transition-colors">
+                   
+                    <Link to="/login" className="font-cal text-xs text-white bg-black rounded-md px-4 py-2 hover:bg-gray-900 transition-colors">
                       Login
-                    </button>
+                    </Link>
                   </div>
                 </div>
         
@@ -58,7 +57,7 @@ const SingleRestaurant = () => {
 
         {/* White Card positioned absolutely */}
         <div className="w-full flex justify-center max-lg:static absolute top-[20vh]">
-          <div className="w-8/12 max-lg:w-full max-lg:rounded-none max-lg:shadow-none bg-white p-8 max-lg:p-5 text-black h-fit shadow-lg items-center flex justify-between rounded-3xl">
+          <div className="w-9/12 max-lg:w-full max-lg:rounded-none max-lg:shadow-none bg-white p-8 max-lg:p-5 text-black h-fit shadow-lg items-center flex justify-between rounded-3xl">
             <div>
               <h1 className="text-2xl font-cal max-lg:text-xl text-neutral-800">
                 {dummyRestaurant.name}
