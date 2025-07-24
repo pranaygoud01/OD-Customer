@@ -7,11 +7,11 @@ const FoodCard = ({ id, name, image, price, desc }) => {
   };
 
   return (
-    <div className="w-full flex justify-between h-fit border-b max-lg:gap-2 border-neutral-200 py-4">
-      <div className="w-8/12 flex flex-col gap-2">
-        <h1 className="text-xl font-cal max-lg:text-xl text-neutral-800">{name}</h1>
+    <div className="w-full flex justify-between h-fit border-b max-lg:gap-2  border-neutral-200 max-lg:p-3 py-4">
+      <div className="w-8/12  flex flex-col gap-2">
+        <h1 className="text-xl font-cal max-lg:text-lg text-neutral-800">{name}</h1>
         <p className="font-dm font-semibold text-xs text-neutral-500">{desc}</p>
-        <p className="text-xl font-cal max-lg:text-xl mt-5">₹{price}</p>
+        <p className="text-xl  font-cal max-lg:text-lg mt-5">₹{price}</p>
       </div>
       <div className="w-fit flex h-[160px] relative">
         <div className="absolute w-full h-[150px] flex justify-center items-end">

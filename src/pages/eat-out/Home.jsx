@@ -2,6 +2,7 @@ import React from 'react'
 import HNavBar from '../../components/eat-out/HNavBar'
 import Hero from '../../components/eat-out/Hero'
 import Restaurant from '../../components/eat-out/Restaurants'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <HNavBar/>
       <Hero/>
       <Restaurant/>
+      <Footer/>
     </div>
   )
 }

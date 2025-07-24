@@ -47,9 +47,9 @@ const Restaurant = () => (
       {restaurants.map(({ name, rating, cuisines, location, imageUrl }) => (
         <Link to="/eat-out/table-booking" key={name} className="border border-neutral-300 hover:shadow overflow-hidden bg-white">
           <img src={imageUrl} alt={name} className="w-full h-36 object-cover" />
-          <div className="p-4">
-            <h3 className="font-cal text-lg mb-1">{name}</h3>
-            <p className="flex items-center gap-2 text-green-600 font-medium mb-1">
+          <div className="p-4 max-lg:p-3">
+            <h3 className="font-cal max-lg:text-sm text-lg mb-1">{name}</h3>
+            <p className="flex max-lg:text-xs items-center gap-2 text-green-600 font-medium mb-1">
               <svg
                 className="w-4 h-4"
                 fill="currentColor"
@@ -60,7 +60,7 @@ const Restaurant = () => (
               </svg>
               {rating} 
             </p>
-            <p className="text-gray-500 text-sm mb-1">{cuisines}</p>
+            <p className="text-gray-500 max-lg:text-xs text-sm mb-1">{cuisines}</p>
             <p className="text-gray-400 text-xs">{location}</p>
           </div>
         </Link>

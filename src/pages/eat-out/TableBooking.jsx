@@ -28,16 +28,16 @@ const TableBooking = () => {
   return (
     <div>
       <HNavBar />
-      <div className="px-4 bg-neutral-100 sm:px-10 md:px-20 py-8 md:py-15 gap-6 min-h-[90vh] grid grid-cols-1 md:grid-cols-3">
-        <div className="w-full shadow border bg-white border-neutral-200 mb-8 md:mb-0">
+      <div className="px-0 bg-neutral-100 sm:px-10 md:px-20 py-0 md:py-15 gap-8 max-lg:gap-0 min-h-[90vh] grid grid-cols-1 md:grid-cols-3">
+        <div className="w-full shadow border  bg-white border-neutral-200 max-lg:border-0">
           <img
             src="https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg"
             alt="Restaurant"
             className="w-full h-[200px] object-cover"
           />
           <div className="p-5 flex flex-col gap-1">
-            <h1 className="text-xl font-cal">Asian, Japanese</h1>
-            <p className="text-sm text-neutral-400">
+            <h1 className="text-xl max-lg:text-lg font-cal">Asian, Japanese</h1>
+            <p className="text-sm max-lg:text-xs text-neutral-400">
               Location 4Th Floor, G.V. Pride, Gandipet Main Road, Kokapet
             </p>
           </div>
@@ -60,8 +60,8 @@ const TableBooking = () => {
 
         {/* Booking form container */}
         <div className="w-full md:col-span-2 bg-white p-6 sm:p-10 border border-neutral-200 shadow">
-          <h2 className="text-2xl mb-6 font-cal">Book Your Table</h2>
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <h2 className="text-2xl mb-6  font-cal">Book Your Table</h2>
+          <form className="flex flex-col max-lg:text-sm gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"

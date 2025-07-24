@@ -34,7 +34,7 @@ const categories = [
 
 const Category = () => {
   return (
-    <div className="w-fullpx-5 lg:px-20 py-5">
+    <div className="w-full px-5 lg:px-20 py-5">
       <h2 className="text-2xl font-cal max-lg:text-xl mb-4">What's on your mind?</h2>
       <div className="grid grid-cols-8 mt-5 max-lg:grid-cols-3 gap-5 items-center">
         {categories.map((cat) => (

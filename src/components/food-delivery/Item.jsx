@@ -74,7 +74,7 @@ const Items = () => {
             })}
           </div>
         </div>
-        <div className="z-1 mt-5 max-lg:w-full max-lg:px-5 w-10/12">
+        <div className="z-1 mt-5 max-lg:w-full max-lg:px-3 w-10/12">
           {menuItems.map((item) => (
             <FoodCard
               key={item._id}

@@ -5,7 +5,7 @@ const HNavBar = () => {
   return (
     <div className="w-full px-20 bg-white sticky top-0 z-50 py-3 max-lg:px-5 flex justify-between border-b border-b-neutral-300">
       <div className="flex flex-col w-fit justify-center">
-        <h1 className="font-cal text-xl md:text-2xl cursor-pointer select-none flex-shrink-0">
+        <h1 className="font-cal text-lg md:text-2xl cursor-pointer select-none flex-shrink-0">
           Order<span className="font-cal text-[#1ECD75]">Now</span>
         </h1>
         <p className="text-[10px] text-center">Book your table</p>
