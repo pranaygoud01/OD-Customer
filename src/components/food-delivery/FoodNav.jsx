@@ -5,14 +5,17 @@ import { Link } from '@tanstack/react-router';
 
 const FoodNav = () => {
   return (
-    <header className="w-full bg-white sticky top-0 z-50 border-b border-b-neutral-200 px-20 max-lg:px-5 py-5">
+    <header className="w-full bg-white sticky top-0 z-50 border-b border-b-neutral-200 px-20 max-lg:px-5 py-3">
       <div className="w-full mx-auto flex  flex-col gap-3 max-md:gap-2">
         {/* Top line: Logo + Buttons */}
         <div className="flex justify-between items-center">
           {/* Logo */}
+          <div className='flex flex-col justify-center'>
           <h1 className="font-cal text-xl md:text-2xl cursor-pointer select-none flex-shrink-0">
             Order<span className="font-cal text-[#1ECD75]">Now</span>
           </h1>
+          <p className="text-[10px] text-center">Order Food</p>
+          </div>
 
           {/* Actions: Cart + Buttons */}
           <div className="flex items-center gap-3 justify-end">
@@ -24,15 +27,8 @@ const FoodNav = () => {
           </div>
         </div>
 
-        {/* 2nd line: Search bar */}
-        <div className="flex items-center max-lg:mt-2 gap-2 w-full bg-neutral-100 border border-neutral-200  px-3 py-2 max-md:w-full">
-          <CiSearch className="text-xl text-neutral-500" />
-          <input
-            type="text"
-            placeholder="Search for Food"
-            className="bg-transparent outline-none w-full text-xs font-cal"
-          />
-        </div>
+        
+       
       </div>
     </header>
   )

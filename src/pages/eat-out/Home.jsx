@@ -5,7 +5,7 @@ import Restaurant from '../../components/eat-out/Restaurants'
 
 const Home = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full bg-neutral-100'>
       <HNavBar/>
       <Hero/>
       <Restaurant/>

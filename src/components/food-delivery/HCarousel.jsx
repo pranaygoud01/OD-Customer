@@ -47,9 +47,9 @@ const HeaderCarousel = () => {
             <div className="
                 absolute 
                 bottom-7 left-7 
-                bg-black/50 
+                bg-black/40 
                 px-7 py-5 
-                rounded-md 
+              
                 text-white
                 max-sm:bottom-3 max-sm:left-2 max-sm:px-3 max-sm:py-2
                 max-w-full

@@ -22,28 +22,7 @@ const SingleRestaurant = () => {
 
   return (
     <div>
-         <header className="w-full bg-white sticky top-0 z-50 border-b border-b-neutral-200 px-20 max-lg:px-5 py-5">
-              <div className="w-full mx-auto flex  flex-col gap-3 max-md:gap-2">
-                {/* Top line: Logo + Buttons */}
-                <div className="flex justify-between items-center">
-                  {/* Logo */}
-                  <h1 className="font-cal text-xl md:text-2xl cursor-pointer select-none flex-shrink-0">
-                    Order<span className="font-cal text-[#1ECD75]">Now</span>
-                  </h1>
-        
-                  {/* Actions: Cart + Buttons */}
-                  <div className="flex items-center gap-3 justify-end">
-                    <FiShoppingBag className="text-xl cursor-pointer text-neutral-700" />
-                   
-                    <Link to="/login" className="font-cal text-xs text-white bg-black px-4 py-2 hover:bg-gray-900 transition-colors">
-                      Login
-                    </Link>
-                  </div>
-                </div>
-        
-               
-              </div>
-            </header>
+         <FoodNav/>
     <div className="w-full h-full font-cal">
       <div className="w-full h-[45vh] max-lg:h-fit relative">
         <div
@@ -57,7 +36,7 @@ const SingleRestaurant = () => {
 
         {/* White Card positioned absolutely */}
         <div className="w-full flex justify-center max-lg:static absolute top-[20vh]">
-          <div className="w-9/12 max-lg:w-full rounded-none max-lg:shadow-none bg-white p-8 max-lg:p-5 text-black h-fit shadow-lg items-center flex justify-between ">
+          <div className="w-8/12 max-lg:w-full rounded-none max-lg:shadow-none bg-white p-8 max-lg:p-5 text-black h-fit shadow-lg items-center flex justify-between ">
             <div>
               <h1 className="text-2xl font-cal max-lg:text-xl text-neutral-800">
                 {dummyRestaurant.name}

@@ -28,8 +28,8 @@ const TableBooking = () => {
   return (
     <div>
       <HNavBar />
-      <div className="px-4 sm:px-10 md:px-20 py-8 md:py-15 gap-6 min-h-[90vh] grid grid-cols-1 md:grid-cols-3">
-        <div className="w-full shadow border border-neutral-200 mb-8 md:mb-0">
+      <div className="px-4 bg-neutral-100 sm:px-10 md:px-20 py-8 md:py-15 gap-6 min-h-[90vh] grid grid-cols-1 md:grid-cols-3">
+        <div className="w-full shadow border bg-white border-neutral-200 mb-8 md:mb-0">
           <img
             src="https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg"
             alt="Restaurant"
