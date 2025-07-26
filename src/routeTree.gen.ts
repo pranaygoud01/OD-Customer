@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GroceriesIndexRouteImport } from './routes/groceries/index'
 import { Route as FoodDeliveryIndexRouteImport } from './routes/food-delivery/index'
 import { Route as EatOutIndexRouteImport } from './routes/eat-out/index'
+import { Route as GroceriesCartRouteImport } from './routes/groceries/cart'
 import { Route as FoodDeliveryRestaurantRouteImport } from './routes/food-delivery/restaurant'
 import { Route as FoodDeliveryCartRouteImport } from './routes/food-delivery/cart'
 import { Route as EatOutTableBookingRouteImport } from './routes/eat-out/table-booking'
@@ -28,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GroceriesIndexRoute = GroceriesIndexRouteImport.update({
+  id: '/groceries/',
+  path: '/groceries/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FoodDeliveryIndexRoute = FoodDeliveryIndexRouteImport.update({
   id: '/food-delivery/',
   path: '/food-delivery/',
@@ -36,6 +43,11 @@ const FoodDeliveryIndexRoute = FoodDeliveryIndexRouteImport.update({
 const EatOutIndexRoute = EatOutIndexRouteImport.update({
   id: '/eat-out/',
   path: '/eat-out/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GroceriesCartRoute = GroceriesCartRouteImport.update({
+  id: '/groceries/cart',
+  path: '/groceries/cart',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FoodDeliveryRestaurantRoute = FoodDeliveryRestaurantRouteImport.update({
@@ -66,8 +78,10 @@ export interface FileRoutesByFullPath {
   '/eat-out/table-booking': typeof EatOutTableBookingRoute
   '/food-delivery/cart': typeof FoodDeliveryCartRoute
   '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
+  '/groceries/cart': typeof GroceriesCartRoute
   '/eat-out': typeof EatOutIndexRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
+  '/groceries': typeof GroceriesIndexRoute
   '/food-delivery/collections': typeof FoodDeliveryCollectionsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -76,8 +90,10 @@ export interface FileRoutesByTo {
   '/eat-out/table-booking': typeof EatOutTableBookingRoute
   '/food-delivery/cart': typeof FoodDeliveryCartRoute
   '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
+  '/groceries/cart': typeof GroceriesCartRoute
   '/eat-out': typeof EatOutIndexRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
+  '/groceries': typeof GroceriesIndexRoute
   '/food-delivery/collections': typeof FoodDeliveryCollectionsIndexRoute
 }
 export interface FileRoutesById {
@@ -87,8 +103,10 @@ export interface FileRoutesById {
   '/eat-out/table-booking': typeof EatOutTableBookingRoute
   '/food-delivery/cart': typeof FoodDeliveryCartRoute
   '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
+  '/groceries/cart': typeof GroceriesCartRoute
   '/eat-out/': typeof EatOutIndexRoute
   '/food-delivery/': typeof FoodDeliveryIndexRoute
+  '/groceries/': typeof GroceriesIndexRoute
   '/food-delivery/collections/': typeof FoodDeliveryCollectionsIndexRoute
 }
 export interface FileRouteTypes {
@@ -99,8 +117,10 @@ export interface FileRouteTypes {
     | '/eat-out/table-booking'
     | '/food-delivery/cart'
     | '/food-delivery/restaurant'
+    | '/groceries/cart'
     | '/eat-out'
     | '/food-delivery'
+    | '/groceries'
     | '/food-delivery/collections'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -109,8 +129,10 @@ export interface FileRouteTypes {
     | '/eat-out/table-booking'
     | '/food-delivery/cart'
     | '/food-delivery/restaurant'
+    | '/groceries/cart'
     | '/eat-out'
     | '/food-delivery'
+    | '/groceries'
     | '/food-delivery/collections'
   id:
     | '__root__'
@@ -119,8 +141,10 @@ export interface FileRouteTypes {
     | '/eat-out/table-booking'
     | '/food-delivery/cart'
     | '/food-delivery/restaurant'
+    | '/groceries/cart'
     | '/eat-out/'
     | '/food-delivery/'
+    | '/groceries/'
     | '/food-delivery/collections/'
   fileRoutesById: FileRoutesById
 }
@@ -130,8 +154,10 @@ export interface RootRouteChildren {
   EatOutTableBookingRoute: typeof EatOutTableBookingRoute
   FoodDeliveryCartRoute: typeof FoodDeliveryCartRoute
   FoodDeliveryRestaurantRoute: typeof FoodDeliveryRestaurantRoute
+  GroceriesCartRoute: typeof GroceriesCartRoute
   EatOutIndexRoute: typeof EatOutIndexRoute
   FoodDeliveryIndexRoute: typeof FoodDeliveryIndexRoute
+  GroceriesIndexRoute: typeof GroceriesIndexRoute
   FoodDeliveryCollectionsIndexRoute: typeof FoodDeliveryCollectionsIndexRoute
 }
 
@@ -151,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/groceries/': {
+      id: '/groceries/'
+      path: '/groceries'
+      fullPath: '/groceries'
+      preLoaderRoute: typeof GroceriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/food-delivery/': {
       id: '/food-delivery/'
       path: '/food-delivery'
@@ -163,6 +196,13 @@ declare module '@tanstack/react-router' {
       path: '/eat-out'
       fullPath: '/eat-out'
       preLoaderRoute: typeof EatOutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/groceries/cart': {
+      id: '/groceries/cart'
+      path: '/groceries/cart'
+      fullPath: '/groceries/cart'
+      preLoaderRoute: typeof GroceriesCartRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/food-delivery/restaurant': {
@@ -202,8 +242,10 @@ const rootRouteChildren: RootRouteChildren = {
   EatOutTableBookingRoute: EatOutTableBookingRoute,
   FoodDeliveryCartRoute: FoodDeliveryCartRoute,
   FoodDeliveryRestaurantRoute: FoodDeliveryRestaurantRoute,
+  GroceriesCartRoute: GroceriesCartRoute,
   EatOutIndexRoute: EatOutIndexRoute,
   FoodDeliveryIndexRoute: FoodDeliveryIndexRoute,
+  GroceriesIndexRoute: GroceriesIndexRoute,
   FoodDeliveryCollectionsIndexRoute: FoodDeliveryCollectionsIndexRoute,
 }
 export const routeTree = rootRouteImport

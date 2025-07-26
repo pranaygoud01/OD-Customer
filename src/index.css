@@ -1,7 +1,8 @@
 @import "tailwindcss";
-*{
-        font-family: "Poppins", sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
-.font-cal{
-     font-family: "Cal Sans", sans-serif;
+.font-cal {
+  font-family: "Cal Sans", sans-serif;
 }
