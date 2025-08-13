@@ -10,19 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as JRouteImport } from './routes/j'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GroceriesIndexRouteImport } from './routes/groceries/index'
 import { Route as FoodDeliveryIndexRouteImport } from './routes/food-delivery/index'
 import { Route as EatOutIndexRouteImport } from './routes/eat-out/index'
+import { Route as GroceriesStoreRouteImport } from './routes/groceries/store'
 import { Route as GroceriesCartRouteImport } from './routes/groceries/cart'
-import { Route as FoodDeliveryRestaurantRouteImport } from './routes/food-delivery/restaurant'
 import { Route as FoodDeliveryCartRouteImport } from './routes/food-delivery/cart'
 import { Route as EatOutTableBookingRouteImport } from './routes/eat-out/table-booking'
 import { Route as FoodDeliveryCollectionsIndexRouteImport } from './routes/food-delivery/collections/index'
+import { Route as FoodDeliveryRestaurantIdRouteImport } from './routes/food-delivery/restaurant/$id'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JRoute = JRouteImport.update({
+  id: '/j',
+  path: '/j',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -45,14 +52,14 @@ const EatOutIndexRoute = EatOutIndexRouteImport.update({
   path: '/eat-out/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GroceriesStoreRoute = GroceriesStoreRouteImport.update({
+  id: '/groceries/store',
+  path: '/groceries/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GroceriesCartRoute = GroceriesCartRouteImport.update({
   id: '/groceries/cart',
   path: '/groceries/cart',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FoodDeliveryRestaurantRoute = FoodDeliveryRestaurantRouteImport.update({
-  id: '/food-delivery/restaurant',
-  path: '/food-delivery/restaurant',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FoodDeliveryCartRoute = FoodDeliveryCartRouteImport.update({
@@ -71,93 +78,113 @@ const FoodDeliveryCollectionsIndexRoute =
     path: '/food-delivery/collections/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FoodDeliveryRestaurantIdRoute =
+  FoodDeliveryRestaurantIdRouteImport.update({
+    id: '/food-delivery/restaurant/$id',
+    path: '/food-delivery/restaurant/$id',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/j': typeof JRoute
   '/login': typeof LoginRoute
   '/eat-out/table-booking': typeof EatOutTableBookingRoute
   '/food-delivery/cart': typeof FoodDeliveryCartRoute
-  '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/groceries/cart': typeof GroceriesCartRoute
+  '/groceries/store': typeof GroceriesStoreRoute
   '/eat-out': typeof EatOutIndexRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
   '/groceries': typeof GroceriesIndexRoute
+  '/food-delivery/restaurant/$id': typeof FoodDeliveryRestaurantIdRoute
   '/food-delivery/collections': typeof FoodDeliveryCollectionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/j': typeof JRoute
   '/login': typeof LoginRoute
   '/eat-out/table-booking': typeof EatOutTableBookingRoute
   '/food-delivery/cart': typeof FoodDeliveryCartRoute
-  '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/groceries/cart': typeof GroceriesCartRoute
+  '/groceries/store': typeof GroceriesStoreRoute
   '/eat-out': typeof EatOutIndexRoute
   '/food-delivery': typeof FoodDeliveryIndexRoute
   '/groceries': typeof GroceriesIndexRoute
+  '/food-delivery/restaurant/$id': typeof FoodDeliveryRestaurantIdRoute
   '/food-delivery/collections': typeof FoodDeliveryCollectionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/j': typeof JRoute
   '/login': typeof LoginRoute
   '/eat-out/table-booking': typeof EatOutTableBookingRoute
   '/food-delivery/cart': typeof FoodDeliveryCartRoute
-  '/food-delivery/restaurant': typeof FoodDeliveryRestaurantRoute
   '/groceries/cart': typeof GroceriesCartRoute
+  '/groceries/store': typeof GroceriesStoreRoute
   '/eat-out/': typeof EatOutIndexRoute
   '/food-delivery/': typeof FoodDeliveryIndexRoute
   '/groceries/': typeof GroceriesIndexRoute
+  '/food-delivery/restaurant/$id': typeof FoodDeliveryRestaurantIdRoute
   '/food-delivery/collections/': typeof FoodDeliveryCollectionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/j'
     | '/login'
     | '/eat-out/table-booking'
     | '/food-delivery/cart'
-    | '/food-delivery/restaurant'
     | '/groceries/cart'
+    | '/groceries/store'
     | '/eat-out'
     | '/food-delivery'
     | '/groceries'
+    | '/food-delivery/restaurant/$id'
     | '/food-delivery/collections'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/j'
     | '/login'
     | '/eat-out/table-booking'
     | '/food-delivery/cart'
-    | '/food-delivery/restaurant'
     | '/groceries/cart'
+    | '/groceries/store'
     | '/eat-out'
     | '/food-delivery'
     | '/groceries'
+    | '/food-delivery/restaurant/$id'
     | '/food-delivery/collections'
   id:
     | '__root__'
     | '/'
+    | '/j'
     | '/login'
     | '/eat-out/table-booking'
     | '/food-delivery/cart'
-    | '/food-delivery/restaurant'
     | '/groceries/cart'
+    | '/groceries/store'
     | '/eat-out/'
     | '/food-delivery/'
     | '/groceries/'
+    | '/food-delivery/restaurant/$id'
     | '/food-delivery/collections/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  JRoute: typeof JRoute
   LoginRoute: typeof LoginRoute
   EatOutTableBookingRoute: typeof EatOutTableBookingRoute
   FoodDeliveryCartRoute: typeof FoodDeliveryCartRoute
-  FoodDeliveryRestaurantRoute: typeof FoodDeliveryRestaurantRoute
   GroceriesCartRoute: typeof GroceriesCartRoute
+  GroceriesStoreRoute: typeof GroceriesStoreRoute
   EatOutIndexRoute: typeof EatOutIndexRoute
   FoodDeliveryIndexRoute: typeof FoodDeliveryIndexRoute
   GroceriesIndexRoute: typeof GroceriesIndexRoute
+  FoodDeliveryRestaurantIdRoute: typeof FoodDeliveryRestaurantIdRoute
   FoodDeliveryCollectionsIndexRoute: typeof FoodDeliveryCollectionsIndexRoute
 }
 
@@ -168,6 +195,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/j': {
+      id: '/j'
+      path: '/j'
+      fullPath: '/j'
+      preLoaderRoute: typeof JRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -198,18 +232,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EatOutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/groceries/store': {
+      id: '/groceries/store'
+      path: '/groceries/store'
+      fullPath: '/groceries/store'
+      preLoaderRoute: typeof GroceriesStoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/groceries/cart': {
       id: '/groceries/cart'
       path: '/groceries/cart'
       fullPath: '/groceries/cart'
       preLoaderRoute: typeof GroceriesCartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/food-delivery/restaurant': {
-      id: '/food-delivery/restaurant'
-      path: '/food-delivery/restaurant'
-      fullPath: '/food-delivery/restaurant'
-      preLoaderRoute: typeof FoodDeliveryRestaurantRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/food-delivery/cart': {
@@ -233,19 +267,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoodDeliveryCollectionsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/food-delivery/restaurant/$id': {
+      id: '/food-delivery/restaurant/$id'
+      path: '/food-delivery/restaurant/$id'
+      fullPath: '/food-delivery/restaurant/$id'
+      preLoaderRoute: typeof FoodDeliveryRestaurantIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  JRoute: JRoute,
   LoginRoute: LoginRoute,
   EatOutTableBookingRoute: EatOutTableBookingRoute,
   FoodDeliveryCartRoute: FoodDeliveryCartRoute,
-  FoodDeliveryRestaurantRoute: FoodDeliveryRestaurantRoute,
   GroceriesCartRoute: GroceriesCartRoute,
+  GroceriesStoreRoute: GroceriesStoreRoute,
   EatOutIndexRoute: EatOutIndexRoute,
   FoodDeliveryIndexRoute: FoodDeliveryIndexRoute,
   GroceriesIndexRoute: GroceriesIndexRoute,
+  FoodDeliveryRestaurantIdRoute: FoodDeliveryRestaurantIdRoute,
   FoodDeliveryCollectionsIndexRoute: FoodDeliveryCollectionsIndexRoute,
 }
 export const routeTree = rootRouteImport

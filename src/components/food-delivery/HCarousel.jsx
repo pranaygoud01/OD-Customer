@@ -6,19 +6,19 @@ import "slick-carousel/slick/slick-theme.css";
 const offerData = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1170&auto=format&fit=crop",
     title: "Mega Pizza Fest!",
     offer: "Flat 50% Off on All Pizzas"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1615937722923-67f6deaf2cc9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1615937722923-67f6deaf2cc9?q=80&w=1170&auto=format&fit=crop",
     title: "Super Sushi Days",
     offer: "Order 1 Get 1 Free Sushi Rolls"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1657299156538-e08595d224ca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1657299156538-e08595d224ca?q=80&w=1170&auto=format&fit=crop",
     title: "Burger Bonanza",
     offer: "Free Fries with Every Burger"
   }
@@ -29,37 +29,43 @@ const HeaderCarousel = () => {
     dots: true,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    arrows: false,
+    dotsClass: "slick-dots custom-dots"
   };
 
   return (
-    <div className="w-full px-20 max-lg:px-5 py-5">
+    <div className="w-full max-w-8xl mx-auto px-4 py-6">
       <Slider {...settings}>
         {offerData.map(item => (
-          <div key={item.id} className="relative">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-[200px] md:h-[350px] object-cover "
-            />
-            <div className="
-                absolute 
-                bottom-7 left-7 
-                bg-black/40 
-                px-7 py-5 
-              
-                text-white
-                max-sm:bottom-3 max-sm:left-2 max-sm:px-3 max-sm:py-2
-                max-w-full
-              ">
-              <h2 className="m-0 text-sm md:text-2xl font-cal">{item.title}</h2>
-              <p className="m-0 mt-2 text-xs md:text-lg">{item.offer}</p>
+          <div key={item.id} className="px-2">
+            <div className="relative rounded-lg overflow-hidden ">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-64 md:h-80 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-5">
+                <h2 className="text-white text-lg md:text-2xl font-semibold">{item.title}</h2>
+                <p className="text-white text-sm md:text-lg mt-1">{item.offer}</p>
+              </div>
             </div>
           </div>
         ))}
       </Slider>
+
+      <style jsx>{`
+        .custom-dots li.slick-active button:before {
+          color: #000000; /* Swiggy orange */
+          opacity: 1;
+        }
+        .custom-dots li button:before {
+          color: #333333;
+          opacity: 0.6;
+        }
+      `}</style>
     </div>
   );
 };

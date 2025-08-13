@@ -7,7 +7,7 @@ import Restaurant from '../../components/food-delivery/Restaurants'
 
 const FoodHome = () => {
   return (
-    <div className='bg-neutral-100'>
+    <div className=''>
        <FoodNav/>
        <HeaderCarousel/>
        <Category/>

@@ -1,13 +1,45 @@
 // src/components/Restaurant.jsx
 import React from 'react';
 import { Link } from '@tanstack/react-router';
-import { useProducts } from '../../context/ProductsContext';
+
+// Dummy data for testing
+const dummyRestaurants = [
+  {
+    _id: '1',
+    restaurantName: 'Spicy Bites',
+    timing: { openTime: '10:00 AM', closeTime: '10:00 PM' },
+    address: { city: 'Mumbai' },
+    profileImage: 'https://via.placeholder.com/300x200?text=Spicy+Bites',
+    images: [],
+  },
+  {
+    _id: '2',
+    restaurantName: 'Sweet Corner',
+    timing: { openTime: '9:00 AM', closeTime: '9:00 PM' },
+    address: { city: 'Delhi' },
+    profileImage: '',
+    images: ['https://via.placeholder.com/300x200?text=Sweet+Corner'],
+  },
+  {
+    _id: '3',
+    restaurantName: 'Urban Tandoor',
+    timing: { openTime: '12:00 PM', closeTime: '11:00 PM' },
+    address: { city: 'Bangalore' },
+    profileImage: '',
+    images: [],
+  },
+  {
+    _id: '4',
+    restaurantName: 'Ocean’s Catch',
+    timing: { openTime: '8:00 AM', closeTime: '8:00 PM' },
+    address: { city: 'Chennai' },
+    profileImage: 'https://via.placeholder.com/300x200?text=Ocean’s+Catch',
+    images: [],
+  },
+];
 
 const Restaurant = () => {
-  const { foodDeliveryOwners, loading, error } = useProducts();
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  const foodDeliveryOwners = dummyRestaurants; // Replaced API with dummy data
 
   return (
     <div className="py-10 pb-15 w-full px-20 max-lg:p-5 mx-auto">
@@ -17,37 +49,31 @@ const Restaurant = () => {
 
       <div className="grid grid-cols-1 mt-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {foodDeliveryOwners.map(
-          ({
-            _id,
-            restaurantName,
-            timing,
-            address,
-            profileImage,
-            images,
-          }) => {
+          ({ _id, restaurantName, timing, address, profileImage, images }) => {
             const imageUrl =
               profileImage || (images && images.length > 0 && images[0]) || '/default-image.png';
 
             const location = address?.city || 'Unknown location';
-
-            // These fields are not present in the API response, so provide placeholders
-            const rating = 'N/A';
-            const time = timing ? `${timing.openTime} - ${timing.closeTime}` : 'N/A';
+            const time = timing
+              ? `${timing.openTime} - ${timing.closeTime}`
+              : 'N/A';
 
             return (
               <Link
-                to={`/food-delivery/restaurant/${_id}`}
+                to={`/j`}
                 key={_id}
                 className="border border-neutral-300 hover:shadow overflow-hidden bg-white"
               >
-                <img src={imageUrl} alt={restaurantName} className="w-full h-36 object-cover" />
+                <img
+                  src={imageUrl}
+                  alt={restaurantName}
+                  className="w-full h-36 object-cover"
+                />
                 <div className="p-4 max-lg:p-3">
                   <h3 className="font-cal max-lg:text-sm text-lg mb-1">{restaurantName}</h3>
                   <p className="flex max-lg:text-xs items-center gap-2 text-green-600 font-medium mb-1">
-                  
-                     {time}
+                    {time}
                   </p>
-                  {/* No cuisines data from API, so omit this or add if available */}
                   <p className="text-gray-400 text-xs">{location}</p>
                 </div>
               </Link>
